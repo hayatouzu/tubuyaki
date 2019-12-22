@@ -16,7 +16,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|text|string|
+|text|text|
 |image|string|
 |user_id|integer|null: false, foreign_key: true|
 
@@ -28,7 +28,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|text|string|null: false|
 |user|references|foreign_key: true|
 |tweet|references|foreign_key:true|
 
