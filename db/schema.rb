@@ -10,26 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_20_113244) do
-
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "text", null: false
-    t.bigint "user_id"
-    t.bigint "tweet_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["tweet_id"], name: "index_comments_on_tweet_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
-  create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "text"
-    t.string "image"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_tweets_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2019_12_20_111031) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -39,7 +20,4 @@ ActiveRecord::Schema.define(version: 2019_12_20_113244) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "comments", "tweets"
-  add_foreign_key "comments", "users"
-  add_foreign_key "tweets", "users"
 end
